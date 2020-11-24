@@ -69,7 +69,7 @@ const EmailForm = (e) =>{
             }, (error) => {
                 console.log(error.text);
             });
-            e.target.reset()
+            // document.getElementById('email-form').reset();
         }
         
     }

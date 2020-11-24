@@ -47,7 +47,7 @@ function Footer() {
                         </td>
                         <td>
                             <div> <img src={phone} alt="Phone" /> </div>
-                            <div className="social-desc" title="" title="+233(0)543027058">+233(0)543027058</div>
+                            <div className="social-desc" title="+233(0)543027058">+233(0)543027058</div>
                         </td>
                     </tr>
                     

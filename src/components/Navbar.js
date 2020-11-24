@@ -2,7 +2,6 @@ import React from 'react';
 import logo from '../images/nuru.jpg'
 
 const Navbar = (props) =>{
-    const theme = props.theme;
     var s = document.getElementById("mySideNav")
 
     /* Set the width of the side navigation to 300px and back to 0px if equal to 300px */

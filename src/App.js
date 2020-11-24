@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import AppBody from './components/AppBody';
 import Footer from './components/Footer';
@@ -7,7 +7,7 @@ import ThemeContextProvider from './context/ThemeContext';
 import {ThemeContext}  from './context/ThemeContext';
 import ToggleTheme from './components/ToggleTheme';
 
-const { useEffect } = React
+// const { useEffect } = React
 
 const App = ({ hideLoader  }) =>{
   useEffect(hideLoader, []);
@@ -15,7 +15,7 @@ const App = ({ hideLoader  }) =>{
     <div className="container">
       <ThemeContextProvider>
       <ThemeContext.Consumer>{(context)=>{
-        const { isLightTheme , light , dark, skills } = context;
+        const { isLightTheme , light , dark } = context;
         const theme = isLightTheme ? light : dark;
         return(
           <div>

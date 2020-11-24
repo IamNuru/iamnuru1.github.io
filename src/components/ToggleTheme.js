@@ -12,7 +12,7 @@ class ToggleTheme extends Component {
         const styleToggle ={
             position:'fixed',
             minHeight:'70px',
-            background:'red',
+            background:'#293a4a',
             borderRadius:'3px',
             top:'40px',
             right:'1px',
@@ -30,16 +30,11 @@ class ToggleTheme extends Component {
             padding:'3px 2px 2px',
             fontSize:'30px',
         }
-        const darkMode = {
-            background:'black'
-        }
-        const lightMode = {
-            background:'#fff'
-        }
         return (
             <div style={styleToggle}>
-                <div 
-                style={{background:theme.ui === 'white' ? 'white':'black'}}></div>
+                <div style={{background:theme.ui === 'white' ? 'white':'black'}}>
+
+                </div>
                 <div onClick={toggleTheme} style={toggle} className="switchBtn">&#127762;</div>
             </div>
         )
