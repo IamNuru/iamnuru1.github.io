@@ -1,38 +1,612 @@
-.App {
+*{
+  padding: 0; margin: 0; box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+overflow-x: hidden;
+}
+ul,li{
+  font-style: none;
+}
+.hover-pointer:hover{
+  cursor:pointer
+}
+
+/* .cover-image{
+background-image: url('nuru.jpg');
+height: 100%; 
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: absolute;
+} */
+.scroll-container {
+width: 100%;
+height: 8px;
+background: white;
+}
+
+.scroll-bar {
+height: 8px;
+background: #4caf50;
+width: 0%;
+}
+
+.skill-progress {
+width: 90%;   
+position: relative;
+padding: 3px;
+margin-left: 10%;
+background-color: rgb(247, 189, 189);
+border-radius: 3px;
+}
+
+.skill-percent {
+position: absolute;   
+left: 50%;
+font-size: 20px !important;
+margin-top:-10px;
+}
+
+.skill-bar {
+height: 20px;
+background-color: green;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
+.skill-progress .laravel{
+width: 80%;
+}
+.skill-progress .vue{
+width: 60%;
+}
+.skill-progress .html{
+width: 80%;
+}
+.skill-progress .bootstrap{
+width: 85%;
+}
+.skill-progress .css{
+width: 80%;
+}
+.skill-progress .jquery{
+width: 80%;
+}
+.skill-progress .php{
+width: 75%;
+}
+.skill-progress .js{
+width: 70%;
+}
+
+.wrap-shimmer{
+  overflow:auto;
+}
+
+.container{
+  width: 99%; margin:0.01% 0.5%; overflow: hidden;
+}
+.head-wrapper{
+  width: 100%; min-height: 50px; padding: 3px;
+  background-color: #293a4a;
+  border-color: #293a4a; box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  position: fixed; margin-left:-0.5%;
+  z-index: 1000; 
+}
+.head-wrapper>div{
+  display: inline-block;
+}
+.logo{
+  width: 30%; display:inline-block;
+}
+.logo > div{
+  display:inline-block
+}
+.logo .img img{
+  border-radius:50%; height:30px;
+}
+.logo .img{
+width: 35px;
+}
+.logo .img-desc{
+  position: absolute;
+}
+.logo .sp-1{
+  font-size:22px; color: white;
+}
+legend{
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-size: 26px;
+font-weight: 500;
+}
+fieldset{
+border: 1px solid rgba(147, 149, 151, 0.12);
+box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+border-radius: 10px;
+margin:2% 5%;
+}
+
+.w-100{
+  width:100%
+} 
+.d-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  grid-gap:0.3rem
+}
+.d-grid td{
+  overflow:auto
+}
+.footer-hr{
+  background-color:white
+}
+
+.copyright{
+  color: white; text-align: center;
+}
+.bg-photo{
+  margin-top: 57px;
+  border-radius: 3px;
+  background-image: url("./images/office.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  /* min-height: 500px;
+  max-height: 800px; */
+  height:100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width:100%;
+  background-size: cover;
+}
+
+.skills-body{
+  background-image: url("./images/skill.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.footer-table-body tr td{
+padding-right:8em;
+}
+.footer-table-body tr td div{
+display: inline-block;
+}
+.footer-table-body tr td div img{
+width: 30px; height: 30px; border-radius:50%;
+}
+thead tr{
+text-align: left;
+font-size: 26px; font-weight: 500; color: rgb(204, 204, 20);
+text-decoration: underline; text-decoration-color: rgb(50, 43, 83);
+}
+.footer-table-body tr td .social-desc{
+position:absolute; font-size: 20px; padding-left:3px;
+font-family:'Times New Roman', Times, serif; 
+font-weight:400;color:white;
+max-width:150px;
+overflow:hidden;
+text-overflow: ellipsis;
+}
+.logo .sp-2{
+  font-size:26px; color: rgb(192, 192, 75);
+}
+.menus{
+  width: 60%; text-align: right; position: absolute; padding-top: 10px;
+}
+.menus li{
+  display: inline-block; min-width:70px;
+  margin-right: 4px; font-size: 18px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  min-height: 25px; text-align: center; font-weight: 600;
+}
+.menus li a{
+  color: white; text-decoration: none; padding:10px
+}
+.menus li:hover{
+  background-color: #0d1720;
+}
+.toggler span{
+  display: block;
+  width: 25px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #fff;
   text-align: center;
+  margin-top: 3px;
+}
+.content{
+font-weight:500;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-size: 26px;
+line-height: 40px;
+word-wrap: wrap;
+word-spacing: 3px;
+padding:20px;
+}
+.content ul li{
+display:block;
+font-weight:400;
+font-size:20px;
+margin-left:40px;
+margin-top:10px;
+list-style-type: square;
+}
+.content ul strong{
+display:block;
+font-weight:650;
+font-size:26px;
+margin-left:15px
+}
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  text-align:center;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* The navigation menu links */
+.sidenav a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 25px;
+color: #818181;
+display: block;
+letter-spacing:3px;
+transition: 0.3s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .sidenav .closebtn:hover {
+  color: #f1f1f1;
+  background-color:red;
+  cursor:pointer;
+}
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  font-size: 36px;
+  margin-left: 50px;
+  width:100px;
+  color:white;
+  background-color:rgb(243, 74, 74);
+}
+
+.site-footer{
+  background-color: #153043;
+  line-height: 35px;
+  padding: 15px 20px;
+}
+.p-input-wrap{
+box-sizing: border-box;
+width: 100%;
+/* border:1px solid #ccc; */
+background-color: rgb(234, 226, 226);
+border-radius:4px;
+padding:10px;
+margin:10px;
+box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+}
+.p-input-wrap >*{
+display: block;
+}
+.p-input-wrap label{
+font-size: 20px;
+font-weight:400;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+color:rgb(233, 81, 21);
+width: 100%;
+min-height: 40px;
+}
+.p-input-wrap input{
+font-size: 20px;
+border-radius:4px;
+width:100%;
+border:1px solid #ccc;
+min-height: 40px;
+background: rgb(243, 245, 247);
+transition:2s;
+padding:3px;
+border: 1px solid #a18cec;
+}
+.p-input-wrap input:focus{
+outline-color: rgba(196, 190, 190, 0.466);
+background-color: white;
+padding:6px;
+transition:0.5s;
+}
+.p-input-wrap textarea{
+font-size: 18px;
+font-family:times;
+border-radius:4px;
+width:100%;
+border:1px solid #ccc;
+padding:4px;
+transition:2s;
+}
+.p-input-wrap textarea:focus{
+outline-color: rgba(196, 190, 190, 0.466);
+background-color: white;
+padding:7px;
+transition:0.5s;
+}
+.p-btn-wrap{
+width:100%; text-align: right;
+}
+.p-btn{
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-weight:400;
+font-size: 20px;
+text-align:center;
+background-color: rgb(206, 23, 23);
+opacity: 0.6;
+width:120px;
+border-radius: 4px;
+min-height:40px;
+padding:2px 5px;
+color: white;
+}
+.p-btn:hover{
+cursor: pointer;
+background-color: red;
+text-shadow: 2px lightblue;
+}
+
+.switchBtn:hover{
+  cursor:pointer
+}
+
+
+.on-photo{
+  text-align:center; 
+  background-color: rgb(138, 135, 135);
+  opacity: 0.8; 
+  height:100vh
+}
+.on-photo p{
+  font-family:times;
+  font-weight:500;
+  color:white;
+  font-size: 1.8em;
+  word-wrap: wrap;
+  letter-spacing: 3px;
+  word-spacing: 10px;
+  line-height: 45px;
+  padding:25px;
+}
+.shimmer {
+  font-family: "Lato";
+  font-weight: 300;
+  font-size: 3em;
+  margin: 0 auto;
+  padding-top:20px;
+  word-wrap:break-word;
+}
+
+.dev{
+  
+  font-size: 2em;
+}
+
+.shimmer {
+  text-align: center;
+  color: rgba(207, 7, 7);
+  /* color: white; */
+  
+background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0, #fff));
+  background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0, #fff));
+  background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0, #fff));
+/* background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)); */
+  -webkit-background-size: 125px 100%;
+  -moz-background-size: 125px 100%;
+  background-size: 125px 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-animation-name: shimmer;
+  -moz-animation-name: shimmer;
+  animation-name: shimmer;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-color: #222;
+}
+@-moz-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+@-webkit-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+@-o-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+@keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+.slideshow{
+  padding:10px 300px;
+  /* position: relative; */
+  overflow:hidden
+}
+.slide {
+  position: absolute;
+  word-wrap:break-word;
+  /* top: 0; */
+  /* left: 500px; */
+}
+.first {
+  left: 0;
+  opacity: 1;
+  z-index: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.first { animation: cycleone 20s ease-in-out infinite; }
+.second { animation: cycletwo 20s ease-in-out infinite; }
+.third { animation: cyclethree 20s ease-in-out infinite; }
+.fourth { animation: cyclefour 20s ease-in-out infinite; }
+@keyframes cycleone {
+    0% { left:    0px; opacity: 1; z-index:  0; } 
+    /* 5% = 1 second */
+   20% { left:    0px; opacity: 1; z-index:  0; } 
+    /* from 0% to 20% = visible 4 seconds */
+   25% { left: -500px; opacity: 0; z-index:  0; } 
+    /* from 20% to 25% = 1 second exit */
+   26% { left: -500px; opacity: 0; z-index: -1; } 
+    /* return from whence you came */
+   27% { left:  500px; opacity: 0; z-index: -1; } 
+    /* until your are complete again */
+   95% { left:  500px; opacity: 0; z-index:  0; } 
+    /* From 95% to 100% = 1 second enter */
+  100% { left:    0px; opacity: 1; z-index:  0; }
+}
+@keyframes cycletwo {
+    0% { left:  500px; opacity: 0; } 
+     /* 5% = 1 second */
+   20% { left:  500px; opacity: 0; } 
+    /* starts moving after 20% ie 4 seconds  */
+   25% { left:    0px; opacity: 1; } 
+    /* from 20% to 25% = for 1 second enter */
+   45% { left:    0px; opacity: 1; z-index:  0; } 
+    /* from 25% to 45% = visible for 4 seconds */
+   50% { left: -500px; opacity: 0; z-index:  0; } 
+    /* from 45% to 50% for 1 second exit */
+   51% { left:  500px; opacity: 0; z-index: -1; } 
+    /* From 95% to 100% = 1 second enter */
+  100% { left:  500px; opacity: 0; z-index: -1; } 
+   /* stays put for remainder */
+}
+@keyframes cyclethree {
+    0% { left:  500px; opacity: 0; } 
+     /* 5% = 1 second */
+   45% { left:  500px; opacity: 0; z-index: -1; } 
+    /* starts moving after 45% = 9 seconds  */
+   50% { left:    0px; opacity: 1; z-index:  0; } 
+    /* from 45% to 50% = for 1 second enter */
+   70% { left:    0px; opacity: 1; z-index:  0; } 
+    /* from 50% to 70% = visible 4 seconds */
+   75% { left: -500px; opacity: 0; z-index:  0; } 
+    /* from 70% to 75% = 1 second exit */
+   76% { left:  500px; opacity: 0; z-index: -1; } 
+    /* return to origin posish */
+  100% { left:  500px; opacity: 0; z-index: -1; } 
+   /* stays put for remainder */
+}
+@keyframes cyclefour {
+    0% { left:  500px; opacity: 0; z-index: -1; } 
+     /* 5% = 1 second */
+   70% { left:  500px; opacity: 0; z-index:  0; } 
+    /* starts moving after 70% = 14 seconds  */
+   75% { left:    0px; opacity: 1; z-index:  0; } 
+    /* from 70% to 75% = 1 second enter */
+   95% { left:    0px; opacity: 1; z-index:  0; } 
+    /* from 75% to 95% = visible 4 seconds */
+  100% { left: -500px; opacity: 0; z-index:  0; } 
+   /* from 95% to 100% = 1 second exit */
 }
 
-@keyframes App-logo-spin {
-  from {
+
+
+
+
+
+
+
+.toggler{
+float:right;
+cursor:pointer;
+display:none !important;
+}
+
+
+
+
+/* Page Loader */
+.loader {
+  position: absolute;
+  top: calc(50% - 4em);
+  left: calc(50% - 4em);
+  width: 6em;
+  height: 6em;
+  border: 1.1em solid rgba(0, 0, 0, 0.2);
+  border-left: 1.1em solid #000000;
+  border-radius: 50%;
+  animation: load8 1.1s infinite linear;
+  transition: opacity 0.3s;
+}
+
+.loader--hide {
+  opacity: 0;
+}
+
+@keyframes load8 {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 50px;}
+  .sidenav a {font-size: 18px;}
+}  
+@media screen and (max-width: 760px) {
+  .desktop-menus{display:none !important;}
+  .toggler{display:block !important;}
+  .contact{
+    margin:0.2rem !important;
+  }
+}  
+@media screen and (max-width: 920px) {
+  .skills-body{
+    background-image: none !important;
+  }
+}  
+
+.contact{
+  
+  margin:3rem;
 }

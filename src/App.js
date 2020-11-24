@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import React from 'react';
+import Navbar from './components/Navbar';
+import AppBody from './components/AppBody';
+import Footer from './components/Footer';
 import './App.css';
+import ThemeContextProvider from './context/ThemeContext';
+import {ThemeContext}  from './context/ThemeContext';
+import ToggleTheme from './components/ToggleTheme';
 
-function App() {
+const { useEffect } = React
+
+const App = ({ hideLoader  }) =>{
+  useEffect(hideLoader, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <ThemeContextProvider>
+      <ThemeContext.Consumer>{(context)=>{
+        const { isLightTheme , light , dark, skills } = context;
+        const theme = isLightTheme ? light : dark;
+        return(
+          <div>
+            <Navbar theme={theme}/>
+            <AppBody cont={context}/>
+            <ToggleTheme theme={theme}/>
+            <Footer />
+          </div>
+          )
+      }}</ThemeContext.Consumer>
+      </ThemeContextProvider>
     </div>
   );
 }
